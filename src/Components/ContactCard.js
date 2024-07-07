@@ -13,7 +13,7 @@ const ContactCard = () => {
 
   // If no contact is found, return a message
   if (!contact) {
-    return <div>Contact not found</div>;
+    return <div className="text-center text-red-500">Contact not found</div>;
   }
 
   const handleDelete = () => {
@@ -38,22 +38,36 @@ const ContactCard = () => {
   };
 
   return (
-    <div>
-      <h2>Contact Details</h2>
-      <p>
-        <strong>Name:</strong> {contact.name}
-      </p>
-      <p>
-        <strong>Username:</strong> {contact.username}
-      </p>
-      <p>
-        <strong>Email:</strong> {contact.email}
-      </p>
-      <p>
-        <strong>Phone:</strong> {contact.phone}
-      </p>
-      <button onClick={handleDelete}>Delete</button>
-      <button onClick={handleUpdate}>Update</button>
+    <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-start py-8">
+      <div className="p-6 bg-white shadow rounded-lg w-full max-w-md">
+        <h2 className="text-2xl font-bold mb-4">Contact Details</h2>
+        <p className="mb-2">
+          <strong>Name:</strong> {contact.name}
+        </p>
+        <p className="mb-2">
+          <strong>Username:</strong> {contact.username}
+        </p>
+        <p className="mb-2">
+          <strong>Email:</strong> {contact.email}
+        </p>
+        <p className="mb-4">
+          <strong>Phone:</strong> {contact.phone}
+        </p>
+        <div className="flex justify-between">
+          <button 
+            onClick={handleDelete} 
+            className="bg-red-500 text-white py-2 px-4 rounded mr-2 hover:bg-red-600"
+          >
+            Delete
+          </button>
+          <button 
+            onClick={handleUpdate} 
+            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+          >
+            Update
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

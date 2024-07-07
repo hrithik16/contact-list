@@ -5,6 +5,7 @@ import AddContact from './Components/AddContact';
 import ContactList from './Components/ContactList';
 import ContactCard from './Components/ContactCard';
 import UpdateCard from './Components/UpdateCard';
+import './App.css';
 
 const router = createBrowserRouter([
   {
